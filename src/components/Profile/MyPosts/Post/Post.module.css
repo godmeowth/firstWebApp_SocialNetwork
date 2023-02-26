@@ -1,0 +1,17 @@
+.item{
+    color: chartreuse;
+    font-family: Papyrus;
+    font-size: x-large;
+}
+.item img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    padding: 5px;
+    padding-left: 10px;
+}
+.dislike img{
+    width: 70px;
+    height: 70px;
+    border-radius: 0px;
+}

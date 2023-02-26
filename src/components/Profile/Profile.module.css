@@ -4,10 +4,15 @@
     width: 2fr;
     height: 700px;
     background-size: cover;
+    color: aqua;
 }
 .content img{
     width: 150px;
     height: 150px;
     object-fit: cover;
     border: 2px aqua;
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-bottom: 50px;
+
 }
