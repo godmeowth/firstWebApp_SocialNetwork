@@ -1,0 +1,13 @@
+.content{
+    grid-area: c;
+    background-image: url("https://cdn.dribbble.com/users/3671336/screenshots/15703273/media/6af7191330d650781869459974018ada.gif");
+    width: 2fr;
+    height: 700px;
+    background-size: cover;
+}
+.content img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 2px aqua;
+}

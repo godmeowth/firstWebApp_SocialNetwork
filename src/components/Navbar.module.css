@@ -1,0 +1,27 @@
+.nav{
+    grid-area: n;
+    background-image: url("https://www.teahub.io/photos/full/288-2886270_cyberpunk-pixel-art-gif.gif");
+    width: 2fr;
+    height: 700px;
+    background-size: cover;
+}
+.item{
+    color: deeppink;
+    font-family: Copperplate;
+    text-align: center;
+    font-size: xxx-large;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    -webkit-text-stroke-color: aqua;
+    -webkit-text-stroke-width: 1px;
+}
+.item.active{
+    color: black;
+    font-family: Copperplate;
+    text-align: center;
+    font-size: xxx-large;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    -webkit-text-stroke-color: red;
+    -webkit-text-stroke-width: 1px;
+}
