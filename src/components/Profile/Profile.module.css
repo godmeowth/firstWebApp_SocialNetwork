@@ -6,13 +6,12 @@
     background-size: cover;
     color: aqua;
 }
-.content img{
+img{
     width: 150px;
-    height: 150px;
+    height: 100px;
     object-fit: cover;
-    border: 2px aqua;
+    border-radius: 40px;
     padding-top: 50px;
     padding-left: 10px;
     padding-bottom: 50px;
-
 }

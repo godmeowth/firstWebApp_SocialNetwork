@@ -1,7 +1,10 @@
 .item{
-    color: chartreuse;
-    font-family: Papyrus;
+    color: aquamarine;
+    font-family: Impact;
+    font-weight: 900;
     font-size: x-large;
+    -webkit-text-stroke-color: darkmagenta;
+    -webkit-text-stroke-width: 2px;
 }
 .item img{
     width: 70px;
