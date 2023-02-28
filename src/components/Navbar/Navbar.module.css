@@ -25,3 +25,51 @@
     -webkit-text-stroke-color: red;
     -webkit-text-stroke-width: 1px;
 }
+a:link {
+    color: deeppink;
+    font-family: Copperplate;
+    text-align: center;
+    font-size: xxx-large;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    -webkit-text-stroke-color: aqua;
+    -webkit-text-stroke-width: 1px;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: deeppink;
+    font-family: Copperplate;
+    text-align: center;
+    font-size: xxx-large;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    -webkit-text-stroke-color: aqua;
+    -webkit-text-stroke-width: 1px;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: black;
+    font-family: Copperplate;
+    text-align: center;
+    font-size: xxx-large;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    -webkit-text-stroke-color: red;
+    -webkit-text-stroke-width: 1px;
+}
+
+/* selected link */
+a:active {
+    color: black;
+    font-family: Copperplate;
+    text-align: center;
+    font-size: xxx-large;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    -webkit-text-stroke-color: red;
+    -webkit-text-stroke-width: 1px;
+}
