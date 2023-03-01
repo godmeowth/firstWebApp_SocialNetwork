@@ -2,7 +2,29 @@
     grid-area: c;
     background-image: url("https://wallpaperaccess.com/full/8351153.gif");
     width: 2fr;
-    height: 700px;
+    height: 715px;
     background-size: cover;
     color: aqua;
+}
+.dialogs{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    grid-template-areas:
+    "d m";
+}
+.dialogsItem{
+    color: red;
+}
+.dialog{
+    color: white;
+}
+.dialog .active{
+    color: aqua;
+}
+
+.chat{
+    color: red;
+}
+.message{
+    color: white;
 }

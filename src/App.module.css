@@ -1,4 +1,4 @@
-.app-wraper {
+.appWraper {
     margin: 0 auto;
     display: grid;
     grid-template-areas:
@@ -6,11 +6,15 @@
   "n c";
     grid-template-rows: 150px 1fr;
     grid-template-columns: 4fr 10fr;
-    grid-gap: 5px;
+    grid-gap: 10px;
+    background-color: black;
 }
-.app-wraper-content{
+
+.appWraperContent{
+    grid-area: c;
+    background-image: url("https://wallpaperaccess.com/full/8351153.gif");
     width: 2fr;
-    height: 700px;
+    height: 715px;
     background-size: cover;
     color: aqua;
 }
