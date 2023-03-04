@@ -21,10 +21,6 @@
 .dialog .active{
     color: aqua;
 }
-
 .chat{
     color: red;
-}
-.message{
-    color: white;
 }

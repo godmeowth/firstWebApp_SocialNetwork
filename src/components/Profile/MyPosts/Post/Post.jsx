@@ -2,7 +2,7 @@ import classes from './Post.module.css'
 const Post = (props ) => {
     return (
         <div className={classes.item}>
-            <img src='https://i.pinimg.com/originals/1b/24/e1/1b24e1ee2242964e3e226f3bc0f16d35.gif'/>
+            <img src={props.img}/>
             {props.message}
             <div>
                     <span className={classes.dislike}>

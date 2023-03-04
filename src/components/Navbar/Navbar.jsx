@@ -2,10 +2,11 @@ import classes from './Navbar.module.css';
 import profile from "../Profile/Profile";
 import {NavLink} from "react-router-dom";
 const activeLink = ({isActive}) => isActive ? classes.active : classes.item;
+// className={`${navLink}${activeLink}`}
 const Navbar = () => {
    return( <nav className={classes.nav}>
         <div className={classes.item}>
-            <NavLink to='/profile' className={activeLink}> Profile</NavLink>
+            <NavLink className={'navLink'} to='/profile' > Profile</NavLink>
         </div>
         <div className={`${classes.item} ${classes.active}`}>
             <NavLink to='/dialogs'className={({ navData }) =>(navData ? classes.active : classes.item)}>Messages</NavLink>
