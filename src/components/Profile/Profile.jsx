@@ -8,7 +8,7 @@ const Profile = (props) => {
         <div className={classes.content}>
             <div>Profile</div>
             <ProfileInfo img = 'https://i.pinimg.com/originals/1b/24/e1/1b24e1ee2242964e3e226f3bc0f16d35.gif'/>
-            <MyPosts posts = {props.posts}/>
+            <MyPosts state = {props.state}/>
         </div>);
 }
 export default Profile;
