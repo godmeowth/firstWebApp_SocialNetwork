@@ -8,19 +8,18 @@
 }
 .dialogs{
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 3fr 10fr;
     grid-template-areas:
     "d m";
 }
 .dialogsItem{
+    grid-area: d;
     color: red;
+    text-align: center;
 }
-.dialog{
-    color: white;
-}
-.dialog .active{
-    color: aqua;
-}
+
 .chat{
+    grid-area: m;
     color: red;
+    text-align: center;
 }

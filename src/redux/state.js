@@ -8,7 +8,7 @@ let state = {
     dialogsPage:{
         messages: [
             {id: 1, message: 'Hello Boba'},
-            {id: 2, message: 'AAAARGHHH'},
+            {id: 2, message: 'BOBUS' },
         ],
         dialogs: [
             {id: 1, name: 'Tokhir'},

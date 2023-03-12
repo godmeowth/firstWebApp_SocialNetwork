@@ -6,7 +6,12 @@
     background-size: cover;
 }
 .item{
-    color: deeppink;
+    color: #d2177c;
+    text-shadow:
+            0 0 20px #e807ca,
+            0 0 10px #e807ca,
+            0 0 21px #0df5f5,
+            0 0 10px #0df5f5;
     font-family: Copperplate;
     text-align: center;
     font-size: xxx-large;
@@ -14,22 +19,15 @@
     line-height: 1.8;
     -webkit-text-stroke-color: aqua;
     -webkit-text-stroke-width: 1px;
-}
-a:link {
-    color: deeppink;
-    font-family: Copperplate;
-    text-align: center;
-    font-size: xxx-large;
-    letter-spacing: 2px;
-    line-height: 1.8;
-    -webkit-text-stroke-color: aqua;
-    -webkit-text-stroke-width: 1px;
-    text-decoration: none;
 }
 
-/* visited link */
-a:visited {
+.item a:link {
     color: deeppink;
+    text-shadow:
+            0 0 20px #e807ca,
+            0 0 10px #000000,
+            0 0 21px #0df5f5,
+            0 0 80px #0df5f5;
     font-family: Copperplate;
     text-align: center;
     font-size: xxx-large;
@@ -41,8 +39,13 @@ a:visited {
 }
 
 /* mouse over link */
-a:hover {
+.item a:hover {
     color: black;
+    text-shadow:
+            0 0 20px #000000,
+            0 0 10px #000000,
+            0 0 21px #f50d0d,
+            0 0 20px #f50d0d;
     font-family: Copperplate;
     text-align: center;
     font-size: xxx-large;
@@ -53,13 +56,18 @@ a:hover {
 }
 
 /* selected link */
-a:active {
-    color: white;
+.item a.active {
+    color: blue;
+    text-shadow:
+            0 0 20px #072ce8,
+            0 0 10px #0a2ce0,
+            0 0 21px #f5ce0d,
+            0 0 20px #f5d60d;
     font-family: Copperplate;
     text-align: center;
     font-size: xxx-large;
     letter-spacing: 2px;
     line-height: 1.8;
-    -webkit-text-stroke-color: red;
-    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: yellow;
+    -webkit-text-stroke-width: 1.5px;
 }

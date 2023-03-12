@@ -1,25 +1,25 @@
 import classes from './Navbar.module.css';
-import profile from "../Profile/Profile";
 import {NavLink} from "react-router-dom";
-const activeLink = ({isActive}) => isActive ? classes.active : classes.item;
-// className={`${navLink}${activeLink}`}
+import {routes} from './routes'
+
+
 const Navbar = () => {
-   return( <nav className={classes.nav}>
-        <div className={classes.item}>
-            <NavLink className={'navLink'} to='/profile' > Profile</NavLink>
+    const isActiveHandler = (data) => {
+        return data ? classes.active : classes.item
+    }
+
+    const navRouting = routes.map((el) => {
+        return <div className={classes.item}  key={el.id}>
+            <NavLink className={({isActive}) => isActiveHandler(isActive)} to={el.route}>
+                {el.id[0].toUpperCase() + el.id.slice(1)}
+            </NavLink>
         </div>
-        <div className={`${classes.item} ${classes.active}`}>
-            <NavLink to='/dialogs'className={({ navData }) =>(navData ? classes.active : classes.item)}>Messages</NavLink>
-        </div>
-        <div className={classes.item}>
-            <NavLink to='/news'>News</NavLink>
-        </div>
-        <div className={classes.item}>
-            <NavLink to='/music'>Music</NavLink>
-        </div>
-        <div className={classes.item}>
-            <NavLink to='/settings'>Settings</NavLink>
-        </div>
-    </nav> );
+    })
+
+    return(
+        <nav className={classes.nav}>
+            {navRouting}
+        </nav>
+    );
 }
 export default Navbar;
