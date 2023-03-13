@@ -23,3 +23,17 @@
     color: red;
     text-align: center;
 }
+.textarea{
+    width: 20%;
+    height: 40px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid violet;
+    border-radius: 4px;
+    background-color: black;
+    font-size: 16px;
+    resize: none;
+    color: red;
+    opacity: 70%;
+    padding-right: 100px;
+}

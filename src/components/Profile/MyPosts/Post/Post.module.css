@@ -1,10 +1,10 @@
 .item{
     color: #7fc5ff;
     text-shadow:
-            0 0 20px rgba(123, 245, 208, 0.56),
-            0 0 10px rgba(13, 245, 245, 0.69),
-            0 0 21px rgba(168, 13, 245, 0.73),
-            0 0 20px rgba(152, 13, 245, 0.77);
+            0 0 10px rgba(123, 245, 208, 0.56),
+            0 0 10px rgba(98, 13, 245, 0.69),
+            0 0 10px rgba(168, 13, 245, 0.73),
+            0 0 10px rgba(152, 13, 245, 0.77);
     font-family: Impact;
     font-weight: 900;
     font-size: x-large;
