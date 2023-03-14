@@ -1,4 +1,4 @@
-.content{
+.content {
     grid-area: c;
     background-image: url("https://wallpaperaccess.com/full/8351153.gif");
     width: 2fr;
@@ -6,34 +6,96 @@
     background-size: cover;
     color: aqua;
 }
-.dialogs{
+
+.dialogs {
     display: grid;
-    grid-template-columns: 3fr 10fr;
+    grid-template-columns: 3fr 12fr;
     grid-template-areas:
     "d m";
 }
-.dialogsItem{
+
+.dialogsItem {
     grid-area: d;
     color: red;
     text-align: center;
 }
 
-.chat{
+.chat {
     grid-area: m;
     color: red;
     text-align: center;
 }
-.textarea{
-    width: 20%;
-    height: 40px;
-    padding: 12px 20px;
+
+.textarea {
+    width: 47%;
+    height: 50px;
     box-sizing: border-box;
-    border: 2px solid violet;
-    border-radius: 4px;
-    background-color: black;
-    font-size: 16px;
+    border: 4px solid #9f599f;
+    border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    background-color: #e3c2b3;
     resize: none;
-    color: red;
-    opacity: 70%;
-    padding-right: 100px;
+    color: #000000;
+    font-family: "Bradley Hand";
+    font-weight: bold;
+    font-size: 16px;
+    opacity: 80%;
+    padding-right: 10px;
+    padding-left: 5px;
+    margin-right: 10px;
+    position: absolute;
+    right: 80px;
+    bottom: -100px;
+}
+
+.textarea:focus {
+    outline: none;
+}
+
+/* CSS */
+.button {
+    align-self: center;
+    background-color: #e3c2b3;
+    background-image: none;
+    background-position: 0 90%;
+    background-repeat: repeat no-repeat;
+    background-size: 4px 3px;
+    border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: rgb(0, 0, 0) 15px 18px 25px -9px;
+    box-sizing: border-box;
+    color: #41403e;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Neucha, sans-serif;
+    font-size: 1rem;
+    line-height: 23px;
+    outline: none;
+    padding: .75rem;
+    text-decoration: none;
+    transition: all 235ms ease-in-out;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    position: absolute;
+    right: 15px;
+    bottom: -100px;
+}
+
+.button:hover {
+    background-color: #564e4c;
+    color: #af9767;
+}
+
+.button:active {
+    box-shadow: rgb(0, 0, 0) 2px 8px 8px -5px;
+    transform: translate3d(0, 2px, 0);
 }

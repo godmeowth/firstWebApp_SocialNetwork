@@ -20,7 +20,7 @@ const Dialogs = (props) => {
                 <div className={classes.chat}>
                     {messagesElement}
                     <textarea ref={newMessage} className={classes.textarea}></textarea>
-                    <button></button>
+                    <button className={classes.button}>Send</button>
                 </div>
             </div>
         </div>
