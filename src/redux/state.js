@@ -25,23 +25,24 @@ let store = {
     _callSubscriber() {
         console.log('tree rerendered')
     },
-    addPost() {
-        let newPost = {
-            id: 5,
-            message: this._state.postsPage.newPostText,
-            likesCount: 0,
-        };
-        this._state.postsPage.posts.push(newPost);
-        this._state.postsPage.newPostText = '';
-        this._callSubscriber(this._state);
-    },
-    updateNewPostText(newText) {
-        this._state.postsPage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
-      subscribe(observer) {
+    subscribe(observer) {
         this._callSubscriber= observer
-      },
+    },
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 5,
+                message: this._state.postsPage.newPostText,
+                likesCount: 0,
+            };
+            this._state.postsPage.posts.push(newPost);
+            this._state.postsPage.newPostText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT'){
+            this._state.postsPage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        }
+    },
 }
 
 export default store
