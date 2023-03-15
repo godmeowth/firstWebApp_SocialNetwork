@@ -1,11 +1,13 @@
-import {rerenderEntireTree} from "../render";
-
+let rerenderEntireTree = () => {
+    console.log('tree rerendered')
+}
 let state = {
     postsPage:{
         posts: [
-            {id: 1, message: 'Hi everyone, Who know good psychologist', likesCount: 12},
+            {id: 1,  message: 'Hi everyone, Who know good psychologist', likesCount: 12},
             {id: 2, message: 'WASSAP, I`VE JUST ATE MY MOTHER', likesCount: 20}
         ],
+        newPostText: ''
     },
     dialogsPage:{
         messages: [
@@ -20,13 +22,23 @@ let state = {
     },
 }
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
         id: 5,
-        message: postMessage,
+        message: state.postsPage.newPostText,
         likesCount: 0,
     };
     state.postsPage.posts.push(newPost);
+    state.postsPage.newPostText = ''
     rerenderEntireTree(state)
+}
+
+export let updateNewPostText = (newText) => {
+    state.postsPage.newPostText = newText;
+    rerenderEntireTree(state)
+}
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer
 }
 export default state;
