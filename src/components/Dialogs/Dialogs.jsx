@@ -7,13 +7,13 @@ import {sendMessageActionCreator, updateMessageTextActionCreator} from "../../re
 const Dialogs = (props) => {
     let dialogsElement = props.state.dialogsPage.dialogs.map(d => <Dialog name={d.name} id={d.id} key={d.id}/>)
     let messagesElement = props.state.dialogsPage.messages.map(m => <Message message={m.message} id={m.id} key={m.id}/>)
-    let newMessage = React.createRef()
+    let newMessage = props.state.newMessageText
     let sendMessage = () => {
         props.dispatch(sendMessageActionCreator())
     }
-    let onMessageChange = () => {
-        let text = newMessage.current.value;
-        props.dispatch(updateMessageTextActionCreator(text))
+    let onMessageChange = (e) => {
+        let message = e.target.value;
+        props.dispatch(updateMessageTextActionCreator(message))
     }
     return (
         <div className={classes.content}>
@@ -23,7 +23,7 @@ const Dialogs = (props) => {
                 </div>
                 <div className={classes.chat}>
                     {messagesElement}
-                    <textarea ref={newMessage} className={classes.textarea} onChange={onMessageChange}/>
+                    <textarea value={newMessage} className={classes.textarea} onChange={onMessageChange} placeholder='Enter your message'/>
                     <button className={classes.button} onClick={sendMessage}>Send</button>
                 </div>
             </div>

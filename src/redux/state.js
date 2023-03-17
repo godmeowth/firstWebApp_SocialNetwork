@@ -34,7 +34,6 @@ let store = {
         this._callSubscriber= observer
     },
     dispatch(action) {
-        debugger
         if (action.type === 'ADD-POST') {
             let newPost = {
                 id: 5,
@@ -48,15 +47,15 @@ let store = {
             this._state.postsPage.newPostText = action.newText;
             this._callSubscriber(this._state);
         }else if (action.type === 'SEND-MESSAGE'){
-            let newMessage = {
+            let newLetter = {
                 id: 3,
                 message: this._state.dialogsPage.newMessageText,
             }
-            this._state.dialogsPage.messages.push(newMessage);
+            this._state.dialogsPage.messages.push(newLetter);
             this._state.dialogsPage.newMessageText = '';
             this._callSubscriber(this._state);
         } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT'){
-            this._state.dialogsPage.messages = action.newMessage;
+            this._state.dialogsPage.newMessageText = action.newMessage;
             this._callSubscriber(this._state);
         }
     },
@@ -80,8 +79,8 @@ export const sendMessageActionCreator = () => {
 }
 export const updateMessageTextActionCreator = (message) => {
     return {
-        type: UPDATE_NEW_POST_TEXT,
-        newMessage: message
+        type: UPDATE_NEW_MESSAGE_TEXT,
+        newMessage: message,
     }
 }
 
