@@ -2,7 +2,7 @@ import ReactDOM from "react-dom/client";
 import React from "react";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import store from "./redux/store";
+import store from "./redux/reduxStore";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let rerenderEntireTree = (state) => {
