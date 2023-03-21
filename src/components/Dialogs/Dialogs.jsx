@@ -2,18 +2,18 @@ import classes from "./Dialogs.module.css";
 import Dialog from "./Dialog/Dialog";
 import Message from "./Chat/Message";
 import React from "react";
-import {sendMessageActionCreator, updateMessageTextActionCreator} from "../../redux/dialogsReducer";
 
 const Dialogs = (props) => {
-    let dialogsElement = props.state.dialogsPage.dialogs.map(d => <Dialog name={d.name} id={d.id} key={d.id}/>)
-    let messagesElement = props.state.dialogsPage.messages.map(m => <Message message={m.message} id={m.id} key={m.id}/>)
-    let newMessage = props.state.dialogsPage.newMessageText
+    let state = props.dialogsPage
+    let dialogsElement = state.dialogs.map(d => <Dialog name={d.name} id={d.id} key={d.id}/>)
+    let messagesElement = state.messages.map(m => <Message message={m.message} id={m.id} key={m.id}/>)
+    let newMessage = state.newMessageText
     let sendMessage = () => {
-        props.dispatch(sendMessageActionCreator())
+        props.onMessageClick();
     }
     let onMessageChange = (e) => {
         let message = e.target.value;
-        props.dispatch(updateMessageTextActionCreator(message))
+       props.updateNewMessage(message);
     }
     return (
         <div className={classes.content}>
