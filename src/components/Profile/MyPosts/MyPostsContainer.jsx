@@ -3,7 +3,14 @@ import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../red
 import MyPosts from "./MyPosts";
 import {connect} from "react-redux";
 
-const mapDispatchToPropsFactory = (dispatch) => {
+const mapStateToProps = (state) => {
+    debugger
+    return{
+        newPostText: state.postsPage.newPostText,
+        posts: state.postsPage.posts,
+    }
+}
+const mapDispatchToProps = (dispatch) => {
     return{
         updateNewPostText: (text)=> {
             dispatch(updateNewPostTextActionCreator(text))
@@ -13,12 +20,6 @@ const mapDispatchToPropsFactory = (dispatch) => {
         },
     }
 }
-const mapStateToPropsFactory = (state) => {
-    return{
-        newPostText: state.postsPage.newPostText,
-        posts: state.postsPage.posts,
-    }
-}
 
-const MyPostsContainer = connect(mapDispatchToPropsFactory, mapStateToPropsFactory)(MyPosts)
+const MyPostsContainer = connect(mapStateToProps, mapDispatchToProps )(MyPosts)
 export default MyPostsContainer;
