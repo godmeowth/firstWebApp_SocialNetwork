@@ -9,7 +9,7 @@ const Dialogs = (props) => {
     let messagesElement = state.messages.map(m => <Message message={m.message} id={m.id} key={m.id}/>)
     let newMessage = state.newMessageText
     let sendMessage = () => {
-        props.onMessageClick();
+        props.sendMessage();
     }
     let onMessageChange = (e) => {
         let message = e.target.value;
