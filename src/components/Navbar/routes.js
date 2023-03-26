@@ -8,6 +8,10 @@ export const routes = [
         route: '/dialogs'
     },
     {
+        id: 'users',
+        route: '/users'
+    },
+    {
         id: 'news',
         route: '/news'
     },

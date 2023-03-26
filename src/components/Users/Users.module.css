@@ -1,0 +1,8 @@
+.content{
+    grid-area: c;
+    background-image: url("https://i0.wp.com/boingboing.net/wp-content/uploads/2015/09/coffee_in_rain_by_kirokaze-d98qb8z.gif?fit=1&resize=600%2C4000&ssl=1");
+    width: 2fr;
+    height: 715px;
+    background-size: cover;
+    color: aqua;
+}
