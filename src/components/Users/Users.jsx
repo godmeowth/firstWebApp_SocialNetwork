@@ -4,16 +4,19 @@ import axios from "axios";
 import UserPhoto from "../../assets/images/UsersICO.png"
 
 let Users = (props) => {
-    useEffect(() => {
-        axios
-            .get("https://social-network.samuraijs.com/api/1.0/users")
-            .then((response) => {
-                props.setUsers(response.data.items);
-            });
-    }, []);
+    let getUsers = () => {
+        if (props.users.length === 0) {
+            axios
+                .get("https://social-network.samuraijs.com/api/1.0/users")
+                .then((response) => {
+                    props.setUsers(response.data.items);
+                });
+        }
+    }
 
     return (
         <div className={classes.content}>
+            <button onClick={getUsers}>GET USERS</button>
             {props.users.map((u) => (
                 <div key={u.id}>
           <span>
