@@ -2,10 +2,7 @@ const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET_USERS'
 let initialState = {
-    users: [
-        {id: 1, photoURL:'', followed: true, fullName: 'Tokhir', status:'I have a knife', location: {city: 'AbemusGrad', country: 'Uzbekistan'},},
-        {id: 2, photoURL:'', followed: false, fullName: 'Limon', status:'I got stubbed', location: {city: 'Usherbinsk', country: 'Ukraine'},},
-    ],
+    users: [],
 };
 const usersReducer = (state = initialState, action) =>{
     switch(action.type){
@@ -26,6 +23,7 @@ const usersReducer = (state = initialState, action) =>{
                     if(u.id === action.usersId){
                         return{...u, followed: false}
                     }
+                    return u
                 })
             }
         case SET_USERS:{
