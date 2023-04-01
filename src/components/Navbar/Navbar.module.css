@@ -29,14 +29,7 @@
             0 0 21px #0df5f5,
             0 0 20px #0df5f5;
     font-family: Copperplate;
-    text-align: center;
-    font-size: xxx-large;
-    letter-spacing: 2px;
-    line-height: 1.8;
-    -webkit-text-stroke-color: aqua;
-    -webkit-text-stroke-width: 1px;
-    text-decoration: none;
-}
+    text-decoration: none}
 
 /* mouse over link */
 .item a:hover {
@@ -46,13 +39,7 @@
             0 0 10px #000000,
             0 0 21px #f50d0d,
             0 0 20px #f50d0d;
-    font-family: Copperplate;
-    text-align: center;
-    font-size: xxx-large;
-    letter-spacing: 2px;
-    line-height: 1.8;
     -webkit-text-stroke-color: red;
-    -webkit-text-stroke-width: 1px;
 }
 
 /* selected link */
@@ -63,11 +50,6 @@
             0 0 10px #0a2ce0,
             0 0 21px #f5ce0d,
             0 0 20px #f5d60d;
-    font-family: Copperplate;
-    text-align: center;
-    font-size: xxx-large;
-    letter-spacing: 2px;
-    line-height: 1.8;
     -webkit-text-stroke-color: yellow;
     -webkit-text-stroke-width: 1.5px;
 }
