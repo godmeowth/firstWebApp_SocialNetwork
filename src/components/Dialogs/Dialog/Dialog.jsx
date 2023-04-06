@@ -1,5 +1,5 @@
 import classes from "./Dialog.module.css";
-import {BrowserRouter, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 const Dialog = (props) => {
   return(
       <div className={classes.dialog}>

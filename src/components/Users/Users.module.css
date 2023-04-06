@@ -6,3 +6,24 @@
     background-size: cover;
     color: aqua;
 }
+.selectedPage{
+    font-weight: bold;
+}
+.users{
+    display: grid;
+    grid-template-columns: 3fr 8fr 4fr;
+    grid-template-areas:
+    "a i b";
+}
+.users img{
+    grid-area: a;
+    width: 120px;
+    height: 150px;
+    object-fit: fill;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+.info{
+    grid-area: i;
+}
