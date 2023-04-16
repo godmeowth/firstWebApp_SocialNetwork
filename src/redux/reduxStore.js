@@ -6,10 +6,11 @@ import userReducer from "./usersReducer";
 import thunk from "redux-thunk";
 
 let reducers = combineReducers({
-    postsPage:profileReducer,
+    profilePage:profileReducer,
     dialogsPage:dialogsReducer,
     sideBar:sideBarReducer,
     usersPage:userReducer,
 });
 let store = createStore(reducers, applyMiddleware(thunk));
+window.store = store
 export default store;
