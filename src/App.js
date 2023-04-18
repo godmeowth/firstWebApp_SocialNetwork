@@ -8,13 +8,14 @@ import Music from "./components/Music/Music";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 
 const App = (props) => {
     return (
         <BrowserRouter>
             <div className={classes.appWraper}>
-                <Header/>
+                <HeaderContainer/>
                 <Navbar/>
                 <div className={classes.appWraperContent}>
                     <Routes>

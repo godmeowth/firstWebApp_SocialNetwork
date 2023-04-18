@@ -1,4 +1,5 @@
 import classes from './Post.module.css'
+let likesIMG = 'https://img1.picmix.com/output/stamp/normal/4/7/2/6/1926274_baae9.gif'
 const Post = (props ) => {
     return (
         <div className={classes.item}>
@@ -6,7 +7,7 @@ const Post = (props ) => {
             {props.message}
             <div>
                     <span className={classes.dislike}>
-                        <img src='https://i.pinimg.com/originals/bd/34/23/bd342367b384dc04c56e595288f3b31e.gif'/>
+                        <img src={likesIMG}/>
                         {props.likes}
                     </span>
             </div>
