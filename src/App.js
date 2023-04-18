@@ -1,7 +1,6 @@
 import classes from './App.module.css';
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
-import Profile from "./components/Profile/Profile";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
@@ -19,7 +18,7 @@ const App = (props) => {
                 <Navbar/>
                 <div className={classes.appWraperContent}>
                     <Routes>
-                        <Route path="/profile*" element={<ProfileContainer/>}/>
+                        <Route path="/profile/:userId?"  element={<ProfileContainer/>}/>
                         <Route path="/dialogs" element={<DialogsContainer/>}/>
                         <Route path="/users" element={<UsersContainer/>}/>
                         <Route path="/news" element={<News/>}/>
