@@ -1,9 +1,6 @@
-import axios from "axios";
-
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET_USERS'
-const GET_USERS = 'GET_USERS'
 const SET_CURRENT_PAGE ='SET_CURRENT_PAGE'
 const SET_TOTAL_COUNT ='SET_TOTAL_COUNT'
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
@@ -42,15 +39,6 @@ const usersReducer = (state = initialState, action) =>{
         case TOGGLE_IS_FETCHING:{
             return {...state, isFetching: action.isFetching}
         }
-        case GET_USERS:{
-                return (dispatch) => {
-                    axios
-                        .get("https://social-network.samuraijs.com/api/1.0/users")
-                        .then((response) => {
-                            dispatch({ type: 'SET_USERS', payload: response.data.items });
-                        });
-                };
-        }
         case SET_CURRENT_PAGE:{
             return {...state, currentPage: action.currentPage}
         }
@@ -64,7 +52,6 @@ const usersReducer = (state = initialState, action) =>{
 export const follow= (usersId) => ({type:FOLLOW, usersId})
 export const unfollow = (usersId) => ({type: UNFOLLOW, usersId})
 export const setUsers = (users) => ({type: SET_USERS, users})
-export const getUsers = (users) => ({type: GET_USERS, users})
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
 export const setUsersTotalCount =(totalCount) => ({type: SET_TOTAL_COUNT, count:totalCount})
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching })
