@@ -9,7 +9,7 @@ const ProfileInfo = (props) => {
     return (
         <div className={classes.profile}>
             <img src={props.profile.photos.large} ></img>
-            <ProfileStatus status={"Greetings"}/>
+            <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
         </div>
     );
 }
