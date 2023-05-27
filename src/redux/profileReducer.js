@@ -80,6 +80,7 @@ export const updateStatus = (status) =>{
                     dispatch(setStatus(status))
                 }
             })
+        console.log("MSG")
     }
 }
 
