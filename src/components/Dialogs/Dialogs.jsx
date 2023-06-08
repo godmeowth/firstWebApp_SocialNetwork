@@ -4,6 +4,8 @@ import Message from "./Chat/Message";
 import React from "react";
 import {Navigate} from "react-router-dom";
 import {Field, reduxForm, values} from "redux-form";
+import {TextArea} from "../common/FormsControls/FormsControls";
+import {maxLengthCreator, required} from "../../utils/validators/validators";
 
 
 
@@ -13,7 +15,6 @@ const Dialogs = (props) => {
     let messagesElement = state.messages.map(m => <Message message={m.message} id={m.id} key={m.id}/>)
 
     let addNewMessage = (values) => {
-        alert(values.newMessage)
         props.sendMessage(values.newMessage);
     }
 
@@ -36,9 +37,13 @@ const Dialogs = (props) => {
 }
 
 const addMessageForm = (props) => {
+    const maxLength50 = maxLengthCreator(50)
     return <form onSubmit={props.handleSubmit}>
         <div>
-            <Field component={'textarea'} name={'newMessage'} placeholder={'Enter your message'}/>
+            <Field component={TextArea}
+                   validate={[required, maxLength50]}
+                   name={'newMessage'}
+                   placeholder={'Enter your message'}/>
         </div>
         <button className={classes.button}>Send</button>
     </form>
