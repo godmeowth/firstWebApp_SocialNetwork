@@ -1,5 +1,4 @@
 import classes from './App.module.css';
-import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import News from "./components/News/News";
@@ -10,37 +9,56 @@ import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
+import {Component} from "react";
+import {connect} from "react-redux";
+import {initializeApp} from "./redux/appReducer";
+import Preloader from "./components/common/Preloader/Preloader";
+import {compose} from "redux";
 
+class App extends Component {
+    componentDidMount() {
+        this.props.initializeApp()
+    }
 
-const App = (props) => {
-    return (
-        <BrowserRouter>
-            <div className={classes.appWraper}>
-                <HeaderContainer/>
-                <Navbar/>
-                <div className={classes.appWraperContent}>
-                    <Routes>
-                        <Route path="/profile/:userId?"
-                               element={<ProfileContainer/>}/>
-                        <Route path="/dialogs"
-                               element={<DialogsContainer/>}/>
-                        <Route path="/users"
-                               element={<UsersContainer/>}/>
-                        <Route path="/login"
-                               element={<Login/>}/>
-                        <Route path="/news"
-                               element={<News/>}/>
-                        <Route path="/music"
-                               element={<Music/>}/>
-                        <Route path="/settings"
-                               element={<Settings/>}/>
-                    </Routes>
+    render() {
+        if(!this.props.initialized){
+            return <Preloader/>
+        }
+        return (
+            <BrowserRouter>
+                <div className={classes.appWraper}>
+                    <HeaderContainer/>
+                    <Navbar/>
+                    <div className={classes.appWraperContent}>
+                        <Routes>
+                            <Route path="/profile/:userId?"
+                                   element={<ProfileContainer/>}/>
+                            <Route path="/dialogs"
+                                   element={<DialogsContainer/>}/>
+                            <Route path="/users"
+                                   element={<UsersContainer/>}/>
+                            <Route path="/login"
+                                   element={<Login/>}/>
+                            <Route path="/news"
+                                   element={<News/>}/>
+                            <Route path="/music"
+                                   element={<Music/>}/>
+                            <Route path="/settings"
+                                   element={<Settings/>}/>
+                        </Routes>
+                    </div>
+
                 </div>
-
-            </div>
-        </BrowserRouter>
-    );
+            </BrowserRouter>
+        );
+    }
 }
-export default App;
+
+const mapStateToProps = (state) => ({
+    initialized: state.app.initialized
+})
+
+export default compose(
+    connect (mapStateToProps, {initializeApp})) (App);
 
 
