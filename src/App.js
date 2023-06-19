@@ -1,6 +1,6 @@
 import classes from './App.module.css';
 import Navbar from "./components/Navbar/Navbar";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 import Music from "./components/Music/Music";
@@ -14,6 +14,7 @@ import {connect} from "react-redux";
 import {initializeApp} from "./redux/appReducer";
 import Preloader from "./components/common/Preloader/Preloader";
 import {compose} from "redux";
+import {withRouter} from "./hoc/withRouter";
 
 class App extends Component {
     componentDidMount() {
@@ -25,7 +26,6 @@ class App extends Component {
             return <Preloader/>
         }
         return (
-            <BrowserRouter>
                 <div className={classes.appWraper}>
                     <HeaderContainer/>
                     <Navbar/>
@@ -49,7 +49,6 @@ class App extends Component {
                     </div>
 
                 </div>
-            </BrowserRouter>
         );
     }
 }
@@ -59,6 +58,7 @@ const mapStateToProps = (state) => ({
 })
 
 export default compose(
+    withRouter,
     connect (mapStateToProps, {initializeApp})) (App);
 
 

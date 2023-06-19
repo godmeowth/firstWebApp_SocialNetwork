@@ -1,7 +1,7 @@
 import classes from './MyPosts.module.css'
 import Post from "./Post/Post";
 import React from "react";
-import {Field, reduxForm, values} from "redux-form";
+import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator, required} from "../../../utils/validators/validators";
 import {TextArea} from "../../common/FormsControls/FormsControls";
 
@@ -18,10 +18,11 @@ const PostForm = (props) =>{
 
 const PostFormRedux = reduxForm({form: 'addPost'})(PostForm)
 
-const MyPosts = (props) => {
+const MyPosts = React.memo( props => {
     const avatar = 'https://i.pinimg.com/originals/1b/24/e1/1b24e1ee2242964e3e226f3bc0f16d35.gif'
-    let postsElements = props.posts.map(p => <Post message={p.message} likes={p.likesCount} img={avatar} id={p.id} key={p.id}/>)
-    let addNewPost=(values)=>{
+    let postsElements = props.posts.map(p => <Post message={p.message} likes={p.likesCount} img={avatar}
+                                                   id={p.id} key={p.id}/>)
+    let addNewPost = (values) => {
         props.addPost(values.newPostElement);
     }
 
@@ -33,5 +34,6 @@ const MyPosts = (props) => {
             {postsElements}
         </div>
     );
-}
+});
+
 export default MyPosts;

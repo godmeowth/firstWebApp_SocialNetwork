@@ -6,15 +6,15 @@ import {connect} from "react-redux";
 import {login} from "../../redux/authReducer";
 import {Navigate} from "react-router-dom";
 import style from "../common/FormsControls/FormsControls.module.css"
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error}) => {
     return <div>
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div><Field placeholder={"Email"} name={"email"}
                         validate={[required]}
                         component={Input}
                         /></div>
 
-            {props.error && <div className={style.formSummaryError}>{props.error}</div>}
+            {error && <div className={style.formSummaryError}>{error}</div>}
 
             <div><Field placeholder={"Password"} name={"password"} type={"password"}
                         validate={[required]}
