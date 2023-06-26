@@ -2,11 +2,12 @@ import React from "react";
 import classes from "./Users.module.css";
 import Paginator from "../common/Paginator/Paginator";
 import User from "./User";
+import PaginatorALT from "../common/Paginator/PaginatorALT";
 
 let Users = (props) => {
     return <div className={classes.content}>
-        <Paginator currentPage={props.currentPage} onPageChanged={props.onPageChanged}
-                   totalUserCount={props.totalUserCount} pageSize={props.pageSize}/>
+        <PaginatorALT currentPage={props.currentPage} onPageChanged={props.onPageChanged}
+                   totalItemsCount={props.totalUserCount} pageSize={props.pageSize}/>
         {props.users.map((u) => (<User
                 user={u}
                 key={u.id}
