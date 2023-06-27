@@ -8,7 +8,6 @@ let initialState = {
     posts: [
         {id: 1, message: 'Hi everyone, Who know good psychologist', likesCount: 12},
         {id: 2, message: 'WASSAP, I`VE JUST ATE MY MOTHER', likesCount: 20},
-        {id: 3, message: 'bebebeb', likesCount: 3},
     ],
     newPostText: '',
     profile: null,

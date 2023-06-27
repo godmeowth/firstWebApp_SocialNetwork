@@ -1,8 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import classes from "../../Users/Users.module.css";
 
-let portionSize = 10
-let Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged}) => {
+let Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 10}) => {
     let pagesCount = Math.ceil(totalItemsCount / pageSize)
 
     let pages = []
@@ -16,12 +15,12 @@ let Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged}) => {
 
     return (
         <div> {slicedPages.map((page, id) => {
-            return <span
-                key={id} className={currentPage === page ? classes.selectedPage :' '}
+            return <button
+                key={id} className={currentPage === page ? classes.selectedPage : classes.button35}
                 onClick={() => {
                     onPageChanged(page)
                 }}>{page}
-                </span>
+                </button>
         })}
         </div>
     )
