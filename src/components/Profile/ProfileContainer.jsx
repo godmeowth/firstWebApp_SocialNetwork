@@ -1,33 +1,11 @@
 import React from "react";
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {getUserProfile, getStatus, updateStatus} from "./../../redux/profileReducer"
+import {getUserProfile, getStatus, updateStatus, savePhoto} from "./../../redux/profileReducer"
 import {compose} from "redux";
-import {
-    useLocation,
-    useNavigate,
-    useParams,
-} from "react-router-dom";
 import {withRouter} from "../../hoc/withRouter";
-
-// function withRouter(Component) {
-//     function ComponentWithRouterProp(props) {
-//         let location = useLocation();
-//         let navigate = useNavigate();
-//         let params = useParams();
-//         return (
-//             <Component
-//                 {...props}
-//                 router={{location, navigate, params}}
-//             />
-//         );
-//     }
-//
-//     return ComponentWithRouterProp;
-// }
-
 class ProfileContainer extends React.Component {
-    componentDidMount() {
+    refreshProfile() {
         let userId = this.props.router.params.userId;
         if (!userId) {
             userId = this.props.authorizedUserId;
@@ -38,11 +16,26 @@ class ProfileContainer extends React.Component {
         this.props.getUserProfile(userId)
         this.props.getStatus(userId)
     }
+    componentDidMount() {
+        this.refreshProfile()
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(this.props.router.params.userId !== prevProps.router.params.userId){
+            this.refreshProfile()
+        }
+
+    }
 
 
     render() {
         return (
-            <Profile {...this.props} profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus}/>
+            <Profile {...this.props}
+                    isOwner={!this.props.router.params.userId}
+                     profile={this.props.profile}
+                     status={this.props.status}
+                     updateStatus={this.props.updateStatus}
+                     savePhoto={this.props.savePhoto}/>
         )
     }
 }
@@ -57,6 +50,7 @@ export default compose(
         getUserProfile,
         getStatus,
         updateStatus,
+        savePhoto,
     }),
     withRouter,
 )(ProfileContainer)
