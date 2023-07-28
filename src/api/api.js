@@ -58,5 +58,8 @@ export const profileAPI = {
             }
         })
     },
+    saveProfile(profile){
+    return instance.put(`profile`, profile)
+},
 }
 
