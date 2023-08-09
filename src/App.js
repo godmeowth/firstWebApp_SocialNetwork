@@ -1,6 +1,6 @@
 import classes from './App.module.css';
 import Navbar from "./components/Navbar/Navbar";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import React, {Component, Suspense} from "react";
 import {connect, Provider} from "react-redux";
@@ -18,8 +18,15 @@ const Music = React.lazy(()=>import('./components/Music/Music'));
 const UsersContainer = React.lazy(()=>import('./components/Users/UsersContainer'));
 const ProfileContainer = React.lazy(()=>import('./components/Profile/ProfileContainer'));
 class App extends Component {
+    catchAllUnhandledErrors =(promiseRejectionEvent) => {
+        alert(promiseRejectionEvent);
+    }
     componentDidMount() {
         this.props.initializeApp()
+        window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors)
+    }
+    componentWillUnmount() {
+        window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors)
     }
 
     render() {
@@ -33,6 +40,7 @@ class App extends Component {
                 <div className={classes.appWraperContent}>
                     <Suspense fallback={<Preloader/>}>
                         <Routes>
+                            <Route path="/" element={<Navigate to="/profile" />} />
                             <Route path="/profile/:userId?"
                                    element={<ProfileContainer/>}/>
                             <Route path="/dialogs"
