@@ -10,14 +10,21 @@
     background-color: black;
 }
 
-.appWraperContent{
+.appWrapperContent{
     grid-area: c;
     width: 2fr;
-    height: 715px;
+    height: 90vh;
+    margin-top: 1vh;
     background-size: cover;
     color: aqua;
 }
-
+.appWraperNavbar{
+    grid-area: n;
+    width: 2fr;
+    height: 90vh;
+    background-size: cover;
+    color: aqua;
+}
 .errorContent{
     color: #0df5f5;
 }

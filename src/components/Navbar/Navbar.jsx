@@ -1,4 +1,5 @@
 import classes from './Navbar.module.css';
+import mainStyle from "./../../App.module.css"
 import {NavLink} from "react-router-dom";
 import {routes} from './routes'
 
@@ -17,7 +18,7 @@ const Navbar = () => {
     })
 
     return(
-        <nav className={classes.nav}>
+        <nav className={`${classes.nav} ${mainStyle.appWraperNavbar}`}>
             {navRouting}
         </nav>
     );

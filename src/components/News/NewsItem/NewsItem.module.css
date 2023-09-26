@@ -1,0 +1,29 @@
+.item{
+    font-size: large;
+    display: flex;
+    margin: 90px;
+    padding: 10px;
+    align-items: center;
+    align-content: center;
+    background-color: #c9e0c0;
+    border-radius: 20px;
+
+}
+.content{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.text{
+    margin: 20px;
+    color: #6eb1cc;
+}
+ a:link{
+    text-decoration: none;
+}
+
+.image{
+    height: 200px;
+    width: 286px;
+    border-radius: 5px;
+}

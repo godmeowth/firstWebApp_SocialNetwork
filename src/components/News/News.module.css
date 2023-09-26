@@ -1,8 +1,7 @@
 .content{
-    grid-area: c;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     background-image: url("https://i.pinimg.com/originals/e3/81/58/e3815811ff19967c15e14f5a5c2b5dfa.gif");
-    width: 2fr;
-    height: 715px;
-    background-size: cover;
-    color: aqua;
 }

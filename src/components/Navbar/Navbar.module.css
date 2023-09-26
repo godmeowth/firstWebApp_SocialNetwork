@@ -1,9 +1,5 @@
 .nav{
-    grid-area: n;
     background-image: url("https://www.teahub.io/photos/full/288-2886270_cyberpunk-pixel-art-gif.gif");
-    width: 2fr;
-    height: 715px;
-    background-size: cover;
 }
 .item{
     color: #d2177c;

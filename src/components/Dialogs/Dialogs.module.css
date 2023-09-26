@@ -1,10 +1,5 @@
 .content {
-    grid-area: c;
     background-image: url("https://wallpaperaccess.com/full/8351153.gif");
-    width: 2fr;
-    height: 715px;
-    background-size: cover;
-    color: aqua;
 }
 
 .dialogs {
@@ -48,7 +43,7 @@
     margin-right: 10px;
     position: absolute;
     right: 80px;
-    bottom: -100px;
+    bottom: 1vh;
 }
 
 .textarea:focus {
@@ -87,7 +82,7 @@
     touch-action: manipulation;
     position: absolute;
     right: 15px;
-    bottom: -100px;
+    bottom: 1vh;
 }
 
 .button:hover {

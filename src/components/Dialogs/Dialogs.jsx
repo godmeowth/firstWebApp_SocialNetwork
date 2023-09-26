@@ -1,11 +1,10 @@
 import classes from "./Dialogs.module.css";
+import mainStyle from "./../../App.module.css"
 import Dialog from "./Dialog/Dialog";
 import Message from "./Chat/Message";
 import React from "react";
 import {Navigate} from "react-router-dom";
-import {Field, reduxForm, values} from "redux-form";
-import {TextArea} from "../common/FormsControls/FormsControls";
-import {maxLengthCreator, required} from "../../utils/validators/validators";
+import { reduxForm} from "redux-form";
 import addMessageForm from "./AddMessageForm(BUG)/AddMessageForm";
 
 
@@ -22,7 +21,7 @@ const Dialogs = (props) => {
     if (!props.isAuth) return <Navigate to={"/login"}/>
 
     return (
-        <div className={classes.content}>
+        <div className={`${classes.content} ${mainStyle.appWrapperContent}`}>
             <div className={classes.dialogs}>
                 <div className={classes.dialogsItem}>
                     {dialogsElement}

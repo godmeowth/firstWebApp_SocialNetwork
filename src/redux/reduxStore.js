@@ -7,6 +7,7 @@ import thunkMiddleware from "redux-thunk";
 import authReducer from "./authReducer";
 import {reducer as formReducer} from 'redux-form';
 import appReducer from "./appReducer";
+import newsReducer from "./newsReducer";
 
 let reducers = combineReducers({
     profilePage:profileReducer,
@@ -16,6 +17,7 @@ let reducers = combineReducers({
     auth: authReducer,
     form: formReducer,
     app: appReducer,
+    news: newsReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
