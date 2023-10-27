@@ -1,7 +1,15 @@
 import React from "react";
-import classes from "../../Users/Users.module.css";
+import classes from '../../Users/Users.module.css'
 
-let Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 10}) => {
+type PropsType = {
+    totalItemsCount: number
+    pageSize: number
+    currentPage: number
+    onPageChanged: (pageNumber: number ) => void
+    portionSize?: number
+}
+
+let Paginator: React.FC<PropsType> = ({totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 10}) => {
     let pagesCount = Math.ceil(totalItemsCount / pageSize)
 
     let pages = []
